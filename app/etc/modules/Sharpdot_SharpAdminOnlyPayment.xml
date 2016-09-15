@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * @category    Sharpdot
+ * @package     Sharpdot_SharpAdminOnlyPayment
+ * @copyright   Copyright (c) 2010 Sharpdot Inc. (http://www.sharpdotinc.com)
+ * @license     
+ */
+-->
+<config>
+    <modules>
+        <Sharpdot_SharpAdminOnlyPayment>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Sharpdot_SharpAdminOnlyPayment>        
+    </modules>
+</config>

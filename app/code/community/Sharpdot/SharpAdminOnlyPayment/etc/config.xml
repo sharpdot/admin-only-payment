@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ * 
+ *
+ * DISCLAIMER
+ *
+ *
+ *
+ *
+ * @category    Sharpdot
+ * @package     Sharpdot_SharpAdminOnlyPayment
+ * @copyright   Copyright (c) 2010 Sharpdot Inc. (http://www.sharpdotinc.com)
+ * @author		Michael Dost <mdost@sharpdotinc.com>
+ */
+-->
+<config>
+	<modules>
+		<Sharpdot_SharpAdminOnlyPayment>
+			<version>0.1.0</version>
+		</Sharpdot_SharpAdminOnlyPayment>
+	</modules>
+	<global>
+		<models>
+			<sharpadminonlypayment>
+				<class>Sharpdot_SharpAdminOnlyPayment_Model</class>
+			</sharpadminonlypayment>						
+		</models>
+		<helpers>
+		<!-- 
+			<payment>
+				<rewrite>
+					<data>Sharpdot_SharpAdminOnlyPayment_Helper_Data</data>
+				</rewrite>
+			</payment>
+		 -->
+		</helpers>		
+	</global>
+	<adminhtml>
+		<events>
+			<payment_method_is_active>
+				<observers>
+					<wc_sharpadminonlypayment_observer>
+						<type>singleton</type>
+						<class>sharpadminonlypayment/observer</class>
+						<method>checkAdminPaymentAllowed</method>
+					</wc_sharpadminonlypayment_observer>
+				</observers>
+			</payment_method_is_active>
+		</events>
+	</adminhtml>
+	
+	
+	<default>
+		<payment>
+			<checkmo>
+				<admin_active>0</admin_active>
+			</checkmo>
+			<!-- 
+			<bankpayment>
+				<admin_active>0</admin_active>
+			</bankpayment>
+			 -->
+		</payment>
+	</default>
+</config>
